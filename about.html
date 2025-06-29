@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Karan Veer | Aspiring Data Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Math Background Elements */
+        .math-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .math-symbol, .math-number {
+            position: absolute;
+            color: rgba(100, 255, 218, 0.15);
+            font-size: 1.8rem;
+            font-family: 'Roboto Mono', monospace;
+            animation: float linear infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .math-number {
+            font-size: 1.4rem;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(5vw, -5vh) rotate(5deg); }
+            50% { transform: translate(10vw, 5vh) rotate(0deg); }
+            75% { transform: translate(-5vw, 8vh) rotate(-5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <a href="index.html" class="logo"></a>
+        <div class=""></div>
+    </header>
+
+    <!-- Mathematical Background Elements -->
+    <div class="math-bg">
+        <div class="math-symbol" style="top:15%;left:10%">∑</div>
+        <div class="math-symbol" style="top:70%;left:85%">σ</div>
+        <div class="math-symbol" style="top:30%;left:50%">∫</div>
+        <div class="math-symbol" style="top:80%;left:20%">π</div>
+        <div class="math-symbol" style="top:40%;left:75%">β</div>
+        <div class="math-symbol" style="top:60%;left:40%">∇</div>
+        <div class="math-number" style="top:25%;left:80%">R²=0.95</div>
+        <div class="math-number" style="top:65%;left:15%">p<0.01</div>
+        <div class="math-number" style="top:45%;left:25%">λ=0.5</div>
+        <div class="math-number" style="top:85%;left:60%">N=1000</div>
+    </div>
+
+    <div id="about-hero">
+        <div class="page-content">
+            <h1 class="page-title">My Data Journey</h1>
+            
+            <div class="content-grid">
+                <!-- Profile Section -->
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <div class="initials">KV</div>
+                    </div>
+                    <h3>Karan Veer</h3>
+                    <p class="title">B.Sc Computer Science & Data Analytics</p>
+                    <p class="institution">IIT Patna | 3rd Year</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">LinkedIn</a>
+                        <a href="#" class="social-icon">GitHub</a>
+                        <a href="#" class="social-icon">Kaggle</a>
+                    </div>
+                </div>
+                
+                <!-- Academic Journey -->
+                <div class="bio-card">
+                    <h2><span class="gradient-text">From Classroom to Data Science</span></h2>
+                    <p class="intro-text">As a passionate student at IIT Patna, I'm bridging theoretical knowledge with practical data applications through:</p>
+                    
+                   <div class="timeline-item">
+    <div class="timeline-year">2023-2026</div>
+    <div class="timeline-content">
+        <h4>B.Sc Computer Science & Data Analytics</h4>
+        <p class="org">Indian Institute of Technology, Patna</p>
+        <ul class="academic-details">
+            <li><strong>Core Focus:</strong> Machine Learning, Statistical Modeling, Big Data Analytics</li>
+            <li><strong>Key Learnings:</strong> Advanced Python, Data Structures, and Cloud Computing</li>
+            <li><strong>Projects:</strong> Built predictive models using real-world datasets</li>
+            <li><strong>Thesis:</strong> "Predictive Modeling for STEM Education Outcomes"</li>
+        </ul>
+    </div>
+</div>
+                          <div class="timeline-item">
+        <div class="timeline-year">Summer 2025</div>
+        <div class="timeline-content">
+            <h4>Data Science Intern</h4>
+            <p class="org">NSL Analytics, Bangalore</p>
+            <ul class="academic-details">
+                <li>Worked on <strong>STEM Analytics Project</strong> (Science, Technology, Engineering, Mathematics)</li>
+                <li>Developed predictive models for student performance analysis</li>
+                <li>Created interactive dashboards for education policymakers</li>
+                <li>Reduced data processing time by 35% through optimized pipelines</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+                    <div class="learning-path">
+                        <h3>Current Learning Focus</h3>
+                        <div class="path-item">
+                            <div class="path-icon">📊</div>
+                            <div class="path-text">Advanced ML algorithms through Andrew Ng's Deep Learning Specialization</div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-icon">🧠</div>
+                            <div class="path-text">Model interpretability using SHAP and LIME techniques</div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-icon">📈</div>
+                            <div class="path-text">Big Data processing with PySpark on AWS EMR</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills Preview -->
+                <div class="skills-preview">
+                    <h2><span class="gradient-text">Developing Core Competencies</span></h2>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <span>Python (Pandas/NumPy)</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Machine Learning</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>SQL</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Data Visualization</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <p>My skill ratings reflect hands-on experience from:</p>
+                        <ul>
+                            <li>5 academic projects with real datasets</li>
+                            <li>3 Kaggle competitions (Top 15% in Titanic ML)</li>
+                            <li>Coursework in Statistical Learning</li>
+                        </ul>
+                    </div>
+                    <a href="skills.html" class="see-more">View detailed skill breakdown →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animate math symbols randomly
+        document.addEventListener('DOMContentLoaded', function() {
+            const symbols = document.querySelectorAll('.math-symbol, .math-number');
+            symbols.forEach(symbol => {
+                const duration = 20 + Math.random() * 30;
+                const delay = Math.random() * 10;
+                const size = 0.8 + Math.random() * 1.2;
+                symbol.style.animationDuration = `${duration}s`;
+                symbol.style.animationDelay = `${delay}s`;
+                symbol.style.fontSize = `${size}rem`;
+            });
+
+            // Mystery box functionality
+            document.querySelector('.mystery-box').addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

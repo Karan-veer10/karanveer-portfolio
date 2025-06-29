@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Veer | Skills</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Floating Language Background */
+        .language-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .language-float {
+            position: absolute;
+            color: rgba(100, 255, 218, 0.1);
+            font-size: 2.5rem;
+            font-family: 'Roboto Mono', monospace;
+            animation: float linear infinite;
+            user-select: none;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-float i {
+            font-size: 1.8rem;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.1; }
+            50% { opacity: 0.15; }
+            100% { transform: translate(10vw, -50vh) rotate(10deg); opacity: 0; }
+        }
+
+        /* Skills Content */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .skill-category {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid #64ffda;
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-category h2 {
+            color: #64ffda;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .libraries-container {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .library-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid #64ffda;
+            gap: 5px;
+        }
+
+        /* Next Button Styles */
+        .next-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .next-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .next-button:active {
+            transform: translateY(1px);
+        }
+
+        /* Mystery Box */
+        .mystery-box {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #64ffda;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .mystery-box:hover {
+            transform: rotateY(15deg);
+            background: rgba(100, 255, 218, 0.2);
+        }
+
+        .mystery-box::before {
+            content: "?";
+            font-size: 1.5rem;
+            color: #64ffda;
+        }
+
+        @media (max-width: 768px) {
+            .next-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .mystery-box {
+                bottom: 20px;
+                left: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .language-float {
+                font-size: 1.8rem;
+            }
+            
+            .language-float i {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <a href="index.html" class="logo">KARAN VEER</a>
+    </header>
+
+    <!-- Floating Language Background -->
+    <div class="language-bg">
+        <div class="language-float" style="top:10%;left:5%;animation-duration:40s"><i class="fab fa-python"></i>PYTHON</div>
+        <div class="language-float" style="top:20%;left:70%;animation-duration:50s"><i class="fab fa-js"></i>JAVASCRIPT</div>
+        <div class="language-float" style="top:30%;left:20%;animation-duration:45s"><i class="fab fa-html5"></i>HTML</div>
+        <div class="language-float" style="top:40%;left:60%;animation-duration:55s"><i class="fas fa-database"></i>SQL</div>
+        <div class="language-float" style="top:50%;left:40%;animation-duration:60s"><i class="fab fa-react"></i>REACT</div>
+        <div class="language-float" style="top:60%;left:80%;animation-duration:35s"><i class="fab fa-node-js"></i>NODE.JS</div>
+        <div class="language-float" style="top:70%;left:30%;animation-duration:50s"><i class="fas fa-chart-line"></i>PANDAS</div>
+        <div class="language-float" style="top:80%;left:10%;animation-duration:65s"><i class="fas fa-brain"></i>TENSORFLOW</div>
+        <div class="language-float" style="top:15%;left:50%;animation-duration:45s"><i class="fab fa-java"></i>JAVA</div>
+        <div class="language-float" style="top:25%;left:25%;animation-duration:55s"><i class="fab fa-r-project"></i>R</div>
+        <div class="language-float" style="top:65%;left:65%;animation-duration:40s"><i class="fas fa-cube"></i>NUMPY</div>
+        <div class="language-float" style="top:35%;left:85%;animation-duration:50s"><i class="fas fa-project-diagram"></i>SCIKIT</div>
+        <div class="language-float" style="top:75%;left:45%;animation-duration:60s"><i class="fab fa-css3-alt"></i>CSS</div>
+    </div>
+
+    <div id="skills-hero">
+        <div class="page-content">
+            <h1 class="page-title">Technical Skills</h1>
+            
+            <div class="skills-container">
+                <!-- Data Science & AI -->
+                <div class="skill-category">
+                    <h2><i class="fas fa-brain"></i> Data Science & AI</h2>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fab fa-python"></i> Python</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fas fa-chart-line"></i> Data Analysis</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fas fa-robot"></i> Machine Learning</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="libraries-container">
+                        <span class="library-badge"><i class="fas fa-project-diagram"></i> Scikit-learn</span>
+                        <span class="library-badge"><i class="fas fa-brain"></i> TensorFlow</span>
+                        <span class="library-badge"><i class="fas fa-fire"></i> PyTorch</span>
+                        <span class="library-badge"><i class="fas fa-chart-bar"></i> Pandas</span>
+                        <span class="library-badge"><i class="fas fa-cube"></i> NumPy</span>
+                        <span class="library-badge"><i class="fas fa-language"></i> NLTK</span>
+                        
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <h2><i class="fas fa-code"></i> Web Development</h2>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fab fa-html5"></i> HTML5</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fab fa-js"></i> JavaScript</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fas fa-server"></i> REST APIs</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="libraries-container">
+                        <span class="library-badge"><i class="fab fa-react"></i> React</span>
+                        <span class="library-badge"><i class="fas fa-bolt"></i> Express</span>
+                        <span class="library-badge"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="library-badge"><i class="fas fa-database"></i> MongoDB</span>
+                        
+                        <span class="library-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                    </div>
+                </div>
+
+                <!-- Programming & Tools -->
+                <div class="skill-category">
+                    <h2><i class="fas fa-laptop-code"></i> Programming & Tools</h2>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fas fa-database"></i> SQL</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span><i class="fab fa-git-alt"></i> Git</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        
+                       
+                    </div>
+                    <div class="skill-item">
+                       
+                       
+                    </div>
+                    <div class="libraries-container">
+                        <span class="library-badge"><i class="fab fa-docker"></i> Docker</span>
+                        
+                        <span class="library-badge"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="library-badge"><i class="fas fa-table"></i> Excel</span>
+                        <span class="library-badge"><i class="fas fa-code"></i> VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Next Button -->
+    <button class="next-button" onclick="window.location.href='projects.html'">
+        Projects <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <!-- Mystery Box -->
+    <div class="mystery-box"></div>
+
+    <script>
+        // Initialize floating languages
+        document.addEventListener('DOMContentLoaded', function() {
+            const languages = document.querySelectorAll('.language-float');
+            
+            languages.forEach(lang => {
+                // Random positioning
+                const left = Math.random() * 90;
+                const top = Math.random() * 90;
+                const delay = Math.random() * 15;
+                const duration = 30 + Math.random() * 60;
+                const size = 1.5 + Math.random() * 3;
+                
+                lang.style.left = `${left}%`;
+                lang.style.top = `${top}%`;
+                lang.style.animationDelay = `${delay}s`;
+                lang.style.animationDuration = `${duration}s`;
+                lang.style.fontSize = `${size}rem`;
+                
+                // Icon size relative to text
+                const icon = lang.querySelector('i');
+                if (icon) {
+                    icon.style.fontSize = `${size * 0.7}rem`;
+                }
+            });
+
+            // Animate skill bars on load
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+
+            // Mystery box functionality
+            document.querySelector('.mystery-box').addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

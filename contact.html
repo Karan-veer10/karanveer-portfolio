@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Veer | Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        /* Social Media Floating Background */
+        #contact-hero {
+            position: relative;
+            min-height: 100vh;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+        
+        .social-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+        }
+        
+        .social-icon-float {
+            position: absolute;
+            font-size: 2.5rem;
+            color: rgba(100, 255, 218, 0.3);
+            animation: float linear infinite;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            50% { opacity: 0.5; }
+            100% { transform: translate(20vw, -50vh) rotate(20deg); opacity: 0; }
+        }
+        
+        /* Contact Content */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid #64ffda;
+            border-radius: 15px;
+            padding: 2.5rem;
+            backdrop-filter: blur(8px);
+        }
+        
+        .contact-form {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid #64ffda;
+            border-radius: 15px;
+            padding: 2.5rem;
+            backdrop-filter: blur(8px);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        .contact-detail i {
+            font-size: 1.5rem;
+            width: 40px;
+            color: #64ffda;
+        }
+        
+        .contact-detail a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-detail a:hover {
+            color: #64ffda;
+            transform: translateX(5px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Roboto Mono', monospace;
+            color: #64ffda;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid #64ffda;
+            border-radius: 5px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(100, 255, 218, 0.2);
+            border: 1px solid #64ffda;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Navigation */
+        .next-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .next-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .mystery-box {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #64ffda;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .mystery-box:hover {
+            transform: rotateY(15deg);
+            background: rgba(100, 255, 218, 0.2);
+        }
+        
+        .mystery-box::before {
+            content: "?";
+            font-size: 1.5rem;
+            color: #64ffda;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .next-button, .mystery-box {
+                bottom: 20px;
+            }
+            
+            .next-button {
+                right: 20px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .mystery-box {
+                left: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <a href="index.html" class="logo">KARAN VEER</a>
+    </header>
+
+    <div id="contact-hero">
+        <!-- Social Media Floating Background -->
+        <div class="social-bg"></div>
+        
+        <!-- Floating Social Icons -->
+        <i class="social-icon-float fab fa-linkedin-in" style="top:10%;left:5%;animation-duration:40s"></i>
+        <i class="social-icon-float fab fa-github" style="top:20%;left:70%;animation-duration:50s"></i>
+        <i class="social-icon-float fab fa-twitter" style="top:30%;left:20%;animation-duration:45s"></i>
+        <i class="social-icon-float fab fa-whatsapp" style="top:40%;left:60%;animation-duration:55s"></i>
+        <i class="social-icon-float fas fa-envelope" style="top:50%;left:40%;animation-duration:60s"></i>
+        <i class="social-icon-float fab fa-telegram-plane" style="top:60%;left:80%;animation-duration:35s"></i>
+        <i class="social-icon-float fab fa-instagram" style="top:70%;left:30%;animation-duration:50s"></i>
+        <i class="social-icon-float fab fa-discord" style="top:80%;left:10%;animation-duration:65s"></i>
+        
+        <!-- Contact Content -->
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2 class="section-title">Get In Touch</h2>
+                
+                <div class="contact-detail">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+91843426406">+91 843426406</a>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:kv16133@gmail.com">kv16133@gmail.com</a>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/Karan-veer10" target="_blank">github.com/Karan-veer10</a>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fab fa-linkedin-in"></i>
+                    <a href="#" target="_blank">linkedin.com/in/karan-veer</a>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/91843426406" target="_blank">Chat on WhatsApp</a>
+                </div>
+                
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Patna, Bihar, India</span>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+                <div class="contact-form">
+                <h2 class="section-title">Send Me a Message</h2>
+               <form id="contactForm" action="https://script.google.com/macros/s/AKfycbwefr6BlkmVinQkZ_Yt5Daoc99TUy3_035Nm7H05b-jS7LE-DB7yNJ_MmKAlchQfAs0BA/exec" method="POST">
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    
+    <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Send Message
+    </button>
+    
+    <div id="successMessage" class="success-message">
+        <i class="fas fa-check-circle"></i> Your message has been sent successfully!
+    </div>
+</form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Next Button -->
+    <button class="next-button" onclick="window.location.href='index.html'">
+        Back Home <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <!-- Mystery Box -->
+    <div class="mystery-box"></div>
+
+    <script>
+     // Initialize 3D background (keep your existing VANTA.NET code)
+    VANTA.NET({
+        el: "#contact-hero",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x3fddff,
+        backgroundColor: 0x0f0f1a,
+        points: 12.00,
+        maxDistance: 22.00,
+        spacing: 18.00
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Your existing floating icons animation code
+        const icons = document.querySelectorAll('.social-icon-float');
+        icons.forEach(icon => {
+            const left = Math.random() * 90;
+            const top = Math.random() * 90;
+            const delay = Math.random() * 15;
+            const duration = 30 + Math.random() * 60;
+            const size = 1.5 + Math.random() * 3;
+            
+            icon.style.left = `${left}%`;
+            icon.style.top = `${top}%`;
+            icon.style.animationDelay = `${delay}s`;
+            icon.style.animationDuration = `${duration}s`;
+            icon.style.fontSize = `${size}rem`;
+        });
+
+        // Enhanced Form Submission Handler
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const form = e.target;
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+                const successMessage = document.getElementById('successMessage');
+                
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                try {
+                    // Prepare form data
+                    const formData = new FormData(form);
+                    
+                    // Add timestamp for Google Sheets
+                    formData.append('timestamp', new Date().toISOString());
+                    
+                    // Send to Google Apps Script
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    // Handle response
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    if (data.status !== 'success') {
+                        throw new Error(data.message || 'Form submission failed');
+                    }
+                    
+                    // Success handling
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                    
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    alert(`Failed to send message: ${error.message}`);
+                } finally {
+                    // Reset button state
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // Keep your existing mystery box functionality
+        document.querySelector('.mystery-box').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    });
+    </script>
+    
+   
+</body>
+</html>
